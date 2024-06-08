@@ -1,0 +1,7 @@
+package com.serratec.trab_final.grupo3.Services;
+
+public class ImagemService {
+	
+	// fazer o upload das fotos dos protudos aqui
+
+}

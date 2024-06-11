@@ -1,51 +1,48 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-}
+/* style.css */
 
 .header {
-    position: fixed;
-    top: 0;
-    width: 100%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     padding: 10px 20px;
-    background-color: #000000;
-    border-bottom: 1px solid #000000;
-    z-index: 1000;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
 }
 
-.header .logo {
+.logo-container {
     display: flex;
     align-items: center;
 }
 
-.header .logo img {
-    height: 50px;
-    margin-right: 15px;
+.logo {
+    height: 50px; /* Define a altura da imagem */
+    width: auto; /* Preserva a proporção da imagem */
+    margin-right: 10px;
 }
 
-.header .text {
-    flex-grow: 1;
-    font-size: 18px;
+.text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
 }
 
-.header .button {
-    padding: 10px 20px;
-    background-color: #fc8c06;
+.button-container {
+    display: flex;
+    align-items: center;
+}
+
+.announce-button {
+    background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 4px;
     font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
 }
 
-.header .button:hover {
+.announce-button:hover {
     background-color: #0056b3;
 }

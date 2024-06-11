@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
-import Header from "../../components/Header";
 import "./style.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Header2 from "../../components/Header2";
 
 function More() {
   const [ler, setLer] = useState({});
@@ -10,17 +10,17 @@ function More() {
 
   useEffect(() => {
     axios
-      .get(`localhost:8080/api/produtos/${id}`)
+      .get(`http://localhost:8080/api/produtos/${id}`)
       .then((response) => {
         setLer(response.data);
-        console.log(ler.titulo);
+        console.log(response.data.titulo);
       })
-      .catch(() => console.log("Erro na requisição!"));
-  }, []);
+      .catch((error) => console.error("Erro na requisição!", error));
+  }, [id]);
 
   return (
     <div>
-      <Header />
+      <Header2/>
       <main>
         <div className="cards">
           <div className="card">

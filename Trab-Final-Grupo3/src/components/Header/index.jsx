@@ -6,13 +6,13 @@ import { Link } from 'react-router-dom';
 function Header() {
     return (
         <header className="header">
-            <div className="logo">
-                <img src={logo} alt="Logo" />
+            <div className="logo-container">
+                <img src={logo} alt="Logo" className="logo" />
                 <div className="text">Serra Market</div>
             </div>
-            <div className="button">
-                <Link to={'/produtos'}>
-                    <button>Anunciar Produto</button>
+            <div className="button-container">
+                <Link to="/produtos">
+                    <button className="announce-button">Anunciar Produto</button>
                 </Link>
             </div>
         </header>

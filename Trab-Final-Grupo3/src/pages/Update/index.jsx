@@ -1,10 +1,13 @@
+import Header2 from '../../components/Header2'
 import './style.css'
 
 import React from 'react'
 
 function Update() {
   return (
-    <div>Update</div>
+    <div>
+      <Header2/>
+    </div>
   )
 }
 

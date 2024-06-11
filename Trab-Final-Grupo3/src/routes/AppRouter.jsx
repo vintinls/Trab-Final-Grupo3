@@ -1,13 +1,18 @@
-import React from 'react'
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Feed from '../pages/Feed';
+import Produtos from '../pages/Produtos';
+import More from '../pages/More';
+import Update from '../pages/Update';
+
 
 function AppRouter() {
   return (
     <Routes>
       <Route path="/" element={<Feed />} />
-      <Route path="/new" element={<Produtos />} />
+      <Route path="/produtos" element={<Produtos />} />
       <Route path="/more" element={<More />} />
       <Route path="/update" element={<Update />} />
-      <Route path="*" element={<Erro />} />
     </Routes>
   );
 }

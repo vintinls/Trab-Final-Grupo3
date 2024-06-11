@@ -1,21 +1,22 @@
 import React from 'react';
-import './style.css'; // Arquivo CSS separado para estilos
+import './style.css';
 import logo from '../../assets/logoSite.png';
+import { Link } from 'react-router-dom';
 
-const Header = () => {
-    const rota = () => {
-        window.location.href = '/pagina-anuncio'; // Mude para a rota desejada
-    };
-
+function Header() {
     return (
         <header className="header">
             <div className="logo">
                 <img src={logo} alt="Logo" />
                 <div className="text">Serra Market</div>
             </div>
-            <button className="button" onClick={rota}>Criar um anúncio</button>
+            <div className="button">
+                <Link to={'/produtos'}>
+                    <button>Anunciar Produto</button>
+                </Link>
+            </div>
         </header>
     );
-};
+}
 
 export default Header;

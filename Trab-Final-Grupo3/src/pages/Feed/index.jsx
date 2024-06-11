@@ -1,10 +1,13 @@
+import Header from '../../components/Header'
 import './style.css'
 
 import React from 'react'
 
 function Feed() {
   return (
-    <div>Feed</div>
+    <div>
+      <Header/>
+    </div>
   )
 }
 

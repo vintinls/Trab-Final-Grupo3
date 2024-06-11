@@ -1,10 +1,13 @@
+import Header2 from '../../components/Header2'
 import './style.css'
 
 import React from 'react'
 
 function More() {
   return (
-    <div>More</div>
+    <div>
+      <Header2/>
+    </div>
   )
 }
 

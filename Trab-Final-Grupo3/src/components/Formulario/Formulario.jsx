@@ -7,9 +7,26 @@ const Formulario = () => {
   const [descricao, setDescricao] = useState('');
   const [email, setEmail] = useState('');
   const [conteudo, setConteudo] = useState('');
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Validações
+    if (titulo.length > 50) {
+      setError('O título deve ter no máximo 50 caracteres.');
+      return;
+    }
+
+    if (descricao.length > 100) {
+      setError('A descrição deve ter no máximo 100 caracteres.');
+      return;
+    }
+
+    if (conteudo.length > 200) {
+      setError('O conteúdo deve ter no máximo 200 caracteres.');
+      return;
+    }
 
     try {
       const response = await axios.post('http://localhost:8080/api/produtos', {
@@ -24,8 +41,10 @@ const Formulario = () => {
       setDescricao('');
       setEmail('');
       setConteudo('');
+      setError('');  // Limpar mensagem de erro
     } catch (error) {
       console.error('Erro ao criar produto:', error);
+      setError('Erro ao criar produto. Tente novamente mais tarde.');
     }
   };
 
@@ -33,28 +52,28 @@ const Formulario = () => {
     <div className='container'>
       <div className="form_box">
         <h2 className="titulo">Cadastre seu Produto</h2>
+        {error && <p className="error">{error}</p>}
         <form onSubmit={handleSubmit}>
           <input 
             type="text" 
             name="Titulo" 
-            id="" 
             placeholder="Titulo do seu Produto" 
             value={titulo} 
             onChange={(e) => setTitulo(e.target.value)}
+            maxLength={50}
           />
           <input 
             type="text" 
             name="Desc" 
-            id="" 
             placeholder='Descrição do seu produto' 
             value={descricao} 
             onChange={(e) => setDescricao(e.target.value)}
+            maxLength={100}
           />
           <input 
             className='email' 
             type="text" 
             name="Email" 
-            id="" 
             placeholder="Email para contato" 
             value={email} 
             onChange={(e) => setEmail(e.target.value)}
@@ -64,6 +83,7 @@ const Formulario = () => {
             placeholder='Conteúdo do produto' 
             value={conteudo} 
             onChange={(e) => setConteudo(e.target.value)}
+            maxLength={200}
           ></textarea>
           <button type="submit">Enviar Produto</button>
         </form>

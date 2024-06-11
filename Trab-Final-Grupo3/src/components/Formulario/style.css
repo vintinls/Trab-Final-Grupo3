@@ -9,13 +9,12 @@
 .titulo{
     margin-left: 210px;
     margin-top: 20px;
+    color: #fff;
 }
 
-body{
-    background-color: rgb(255, 252, 252);
-}
 
-body, 
+
+
 textarea{
     font-family: sans-serif;
 
@@ -40,16 +39,17 @@ button{
 .form_box{
     display: flex;
     flex-direction: column;
-    background-color: aliceblue;
+    background-color: rgb(0, 0, 0);
     border-radius: 8px;
     width: 700px;
+    margin-top: 60px;
 
 }
 
 .form_box .tittle{
     padding: 24px 32px;
     font-size: 24px;
-    border-bottom: thin solid #ccc;
+    border-bottom: thin solid #ffffff;
 }
 
 .form_box form{
@@ -65,7 +65,7 @@ button{
     width: calc(50% - 8px);
     height: 48px;
     border-radius: 8px;
-    border: thin solid #999;
+    border: thin solid #ffffff;
     padding-left: 16px;
     margin-bottom: 16px;
     font-size: 16px;
@@ -93,7 +93,7 @@ button{
     width: 180px;
     height: 48px;
     border-radius: 8px;
-    background-color: blueviolet;
+    background-color: #fc8c06;
     color: #fff;
     font-size: 16px;
     font-weight: bold;
@@ -102,5 +102,5 @@ button{
 }
 
 .form_box button:hover{
-    background-color:rgb(102, 0, 197) ;
+    background-color:#fc8c06 ;
 }

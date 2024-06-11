@@ -12,21 +12,22 @@ body {
     background-color: #000000;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    color: #ffffff; /* Letras brancas */
-  }
-  
-  .container h1 {
-    text-align: center;
-    color: #ffffff; /* Letras brancas */
-    margin-bottom: 20px; /* Adicionado espaço abaixo do título */
-    margin-top: -370px;
+    color: #ffffff; 
     
   }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
   
   .form {
     display: flex;
     flex-direction: column;
-    margin-left: -500px;
+    margin-left: -30px;
   }
   
   .form-label {

@@ -61,7 +61,6 @@ const UpdateProduct = () => {
   return (
     <div className="container">
       <Header2/>
-      <h1>Editar Produto</h1>
       <form className="form" onSubmit={handleFormSubmit}>
         <label className="form-label" htmlFor="name">Titulo Produto:</label>
         <input

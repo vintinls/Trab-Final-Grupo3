@@ -50,7 +50,7 @@ public class ProdutoController {
         }
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<Produto> atualizarProduto(@PathVariable Long id, @RequestBody Produto produtoAtualizado) {
         Produto produto = produtoService.atualizarProduto(id, produtoAtualizado);
         if (produto != null) {

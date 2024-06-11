@@ -1,37 +1,55 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import * as yup from "yup";
+import './style.css';  // Importação do arquivo CSS
+import Header2 from "../../components/Header2";
+
+const validationSchema = yup.object().shape({
+  titulo: yup
+    .string()
+    .required("Título Obrigatório")
+    .max(40, "Precisa ter 40 caracteres no máximo!"),
+  descricao: yup
+    .string()
+    .required("Descrição Obrigatória")
+    .max(100, "Precisa ter 100 caracteres no máximo!"),
+  conteudo: yup
+    .string()
+    .required("Conteúdo Obrigatório")
+    .max(500, "Precisa ter 500 caracteres no máximo!"),
+});
 
 const UpdateProduct = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [product, setProduct] = useState({
+  const [productDetails, setProductDetails] = useState({
     name: '',
     description: '',
     price: ''
   });
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/product/${id}`)
+    axios.get(`http://localhost:8080/api/produtos/${id}`)
       .then(response => {
-        setProduct(response.data);
+        setProductDetails(response.data);
       })
       .catch(error => {
         console.error('There was an error fetching the product!', error);
       });
   }, [id]);
 
-  const handleChange = (e) => {
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setProduct({
-      ...product,
+    setProductDetails({
+      ...productDetails,
       [name]: value
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleFormSubmit = (e) => {
     e.preventDefault();
-    axios.put(`http://localhost:5000/product/${id}`, product)
+    axios.put(`http://localhost:8080/api/produtos/update/${id}`, productDetails)
       .then(() => {
         navigate('/');
       })
@@ -41,37 +59,41 @@ const UpdateProduct = () => {
   };
 
   return (
-    <div>
-      <h1>Update Product</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Product Name:</label>
+    <div className="container">
+      <Header2/>
+      <h1>Editar Produto</h1>
+      <form className="form" onSubmit={handleFormSubmit}>
+        <label className="form-label" htmlFor="name">Titulo Produto:</label>
         <input
+          className="form-input"
           type="text"
           id="name"
           name="name"
-          value={product.name}
-          onChange={handleChange}
+          value={productDetails.name}
+          onChange={handleInputChange}
           required
         />
-        <label htmlFor="description">Description:</label>
+        <label className="form-label" htmlFor="description">Description:</label>
         <textarea
+          className="form-textarea"
           id="description"
           name="description"
-          value={product.description}
-          onChange={handleChange}
+          value={productDetails.description}
+          onChange={handleInputChange}
           required
         />
-        <label htmlFor="price">Price:</label>
+        <label className="form-label" htmlFor="price">Price:</label>
         <input
-          type="number"
+          className="form-input"
+          type="text"
           id="price"
           name="price"
           step="0.01"
-          value={product.price}
-          onChange={handleChange}
+          value={productDetails.price}
+          onChange={handleInputChange}
           required
         />
-        <button type="submit">Update</button>
+        <button className="form-button" type="submit">Update</button>
       </form>
     </div>
   );

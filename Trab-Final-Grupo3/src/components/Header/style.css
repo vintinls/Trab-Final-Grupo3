@@ -5,8 +5,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #e0e0e0;
+    background-color: #fc8c06;
+    border-bottom: 1px solid #fc8c06;
 }
 
 .logo-container {
@@ -23,7 +23,7 @@
 .text {
     font-size: 24px;
     font-weight: bold;
-    color: #ffffff;
+    color: #fc8c06;
 }
 
 .button-container {
@@ -32,8 +32,8 @@
 }
 
 .announce-button {
-    background-color: #007bff;
-    color: white;
+    background-color: #fc8c06;
+    color: rgb(0, 0, 0);
     border: none;
     padding: 10px 20px;
     border-radius: 4px;
@@ -44,5 +44,5 @@
 }
 
 .announce-button:hover {
-    background-color: #0056b3;
+    background-color: #ffffff;
 }

@@ -23,10 +23,14 @@ function Feed() {
   const deletarProduto = async (id) => {
     try {
       await axios.delete(`http://localhost:8080/api/produtos/${id}`);
-      setProdutos(produtos.filter(produto => produto.id !== id));
+      setProdutos(produtos.filter((produto) => produto.id != id));
     } catch (error) {
       console.error("Erro ao deletar produto:", error);
     }
+    // function deletePost(id) {
+    //   axios.delete(`https://665fa6d55425580055b0594f.mockapi.io/posts/${id}`);
+    //   setPosts(posts.filter((post) => post.id != id));
+    // }
   };
 
   return (
@@ -55,7 +59,7 @@ function Feed() {
                 </div>
 
                 <div className="btn-delete">
-                  <button onClick={() => deletarProduto(produto.id)}>Apagar</button>
+                <button onClick={() => deleteProduto(produto.id)}>Apagar</button>
                 </div>
               </div>
             </div>

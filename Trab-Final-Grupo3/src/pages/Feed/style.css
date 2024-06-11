@@ -1,118 +1,83 @@
-main header {
-    display: flex;
-}
-
-.cards .card h2 {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 500px;
-}
-
-img {
-    width: 20px;
-    margin-left: 40px;
-
-    cursor: pointer;
-}
-
-.modal {
-    width: 80px;
-    height: 100px;
-    background-color: white;
-}
-
-main .cards{
+/* style.css */
+body {
+    background-color: #1f1f1f; /* Cor de fundo cinza */
+  }
+.cards {
     display: flex;
     justify-content: center;
     flex-direction: column;
-
-    margin-top: 1rem;
-}
-
-main .cards .card {
-    margin: 0 auto;
-
-    background-color: #2F3644;
-
+    align-items: center; /* Adicionado para centralizar os cards horizontalmente */
+    margin-top: 100px; /* Adicionado espaçamento superior */
+  }
+  
+  .cards .card {
+    background-color: #000000;
     padding: 30px 40px;
     width: 600px;
-
     border-radius: 7px;
-    margin-top: 40px;
-
-}
-
-.cards .card header {
+    margin-top: 20px; /* Reduzido o espaçamento superior */
+    margin-bottom: 20px; /* Adicionado espaçamento inferior */
+  }
+  
+  .card header {
     display: flex;
     justify-content: space-between;
-
     margin-bottom: 15px;
-}
-
-.card header h2 {
+  }
+  
+  .card header h2 {
     font-family: Noto Sans;
     font-weight: 700;
-
-    color: #D2DAF5;
-
+    color: #ffffff;
     font-size: 1.7rem;
-}
-
-.line {
-    background-color: #3E445B;
+  }
+  
+  .line {
+    background-color: #3e445b;
     height: 2px;
-}
-
-p {
+  }
+  
+  p {
     margin-top: 20px;
     font-size: 1.2rem;
-    
     max-width: 500px;
-
     font-family: Noto Sans;
     font-weight: 500;
+    color: #b3bacf;
+  }
+  
 
-    color: #B3BACF;
-}
-
-.btns {
+  
+  .btn-edit button {
+    background-color: #00b3ff;
+  }
+  
+  .btn-more button {
+    background-color: #66ff00;
+  }
+  
+  .btn-delete button {
+    background-color: rgb(255, 0, 0);
+  }
+  
+  .btns {
     display: flex;
     justify-content: space-between;
-
-    margin-top: 30px;
-}
-
-.btns button {
+    align-items: center; /* Adicionado para centralizar verticalmente */
+    margin-top: 20px; /* Adicionado espaçamento superior */
+    margin-bottom: 20px; /* Adicionado espaçamento inferior */
+    padding: 0 20px;
+    flex-wrap: wrap; /* Adicionado para quebrar linha quando necessário */
+  }
+  
+  .btns button {
     color: rgba(255, 255, 255, 0.938);
     font-size: 1.3rem;
     border: 0;
-
     border-radius: 10px;
-
     font-family: Heebo;
     font-weight: 700;
-    
     cursor: pointer;
-
-    padding: 5px 40px;
-}
-
-.btn-edit button{
-    background-color: #80D8FF;
-}
-
-.btn-more button{
-    background-color: #3DECB1;
-    
-}
-
-.btn-delete button{
-    background-color: rgb(241, 45, 45);
-}
-
-.loading {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    padding: 5px 20px;
+    margin: 5px; /* Adicionado espaçamento entre os botões */
+  }

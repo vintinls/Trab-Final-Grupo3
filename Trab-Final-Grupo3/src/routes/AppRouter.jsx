@@ -11,7 +11,7 @@ function AppRouter() {
     <Routes>
       <Route path="/" element={<Feed />} />
       <Route path="/produtos" element={<Produtos />} />
-      <Route path="/more" element={<More />} />
+      <Route path="/more/:id" element={<More />} />
       <Route path="/update" element={<Update />} />
     </Routes>
   );
